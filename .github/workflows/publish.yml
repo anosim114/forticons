@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@master
+      - uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-      - run: npm install
-      - run: npm transform-fa
-      - run: npm run build
-      - run: cp -r icons lib/build/svg
+      - run: |
+          yarn
+          yarn transform-fa
+          yarn build
       - uses: actions/upload-artifact@master
         with:
           name: forticons
