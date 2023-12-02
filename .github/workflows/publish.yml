@@ -11,8 +11,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '20.x'
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
       - run: |
           yarn
+          bundle
+      - run: |
           yarn transform-fa
           yarn build
       - uses: actions/upload-artifact@master
