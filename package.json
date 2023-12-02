@@ -1,6 +1,6 @@
 {
-  "name": "@primer/octicons",
-  "version": "19.8.0",
+  "name": "forticons",
+  "version": "0.0.4",
   "publishConfig": {
     "registry": "no registry, don't publish from this package.json."
   },
