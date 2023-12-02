@@ -35,4 +35,4 @@ bundle update
 echo "**************** Building ****************"
 bundle exec rake build
 echo "$(ls pkg/)"
-# gem push pkg/*.gem && wait
+gem push pkg/*.gem && wait
