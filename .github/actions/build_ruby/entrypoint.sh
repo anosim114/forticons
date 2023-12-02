@@ -22,7 +22,7 @@ cd ./lib/$*
 echo "**************** Copying assets files to build directory ****************"
 cp -R ../build lib/
 
-perl -pi -e "s/\"octicons\", \"[^\"]+\"/\"octicons\", \"${PACKAGE_VERSION}\"/" ./Gemfile ./*.gemspec
+perl -pi -e "s/\"forticons\", \"[^\"]+\"/\"forticons\", \"${PACKAGE_VERSION}\"/" ./Gemfile ./*.gemspec
 
 echo "**************** Installing ****************"
 bundle install
@@ -33,4 +33,6 @@ bundle exec rake version\["$PACKAGE_VERSION"\]
 bundle update
 
 echo "**************** Building ****************"
-(bundle exec rake build; gem push pkg/*.gem) && wait
+bundle exec rake build
+echo "$(ls pkg/)"
+# gem push pkg/*.gem && wait

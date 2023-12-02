@@ -4,29 +4,14 @@ PACKAGE_VERSION=$(jq '.version' --raw-output ./package.json)
 
 echo $PACKAGE_VERSION
 
-echo "Versioning Octicons node package"
+echo "Versioning Forticons ruby gem"
 
-cd lib/octicons_node/
-npm -f --no-git-tag-version --allow-same-version version $PACKAGE_VERSION
-
-echo "Versioning Octicons react package"
-
-cd ../octicons_react/
-npm -f --no-git-tag-version --allow-same-version version $PACKAGE_VERSION
-
-echo "Versioning Octicons ruby gem"
-
-cd ../octicons_gem/
+cd lib/forticons_gem/
 rake version\["$PACKAGE_VERSION"\]
 
-echo "Versioning Octicons rails helper gem"
+echo "Versioning Forticons rails helper gem"
 
-cd ../octicons_helper/
-rake version\["$PACKAGE_VERSION"\]
-
-echo "Versioning Octicons jekyll plugin gem"
-
-cd ../octicons_jekyll/
+cd ../forticons_helper/
 rake version\["$PACKAGE_VERSION"\]
 
 cd ../../
