@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+#yarn versioning
+#yarn build
+
+gem signin
+cd lib/forticons_gem
+gem build forticons.gemspec
+gem push forticons*.gem
+cd ../forticons_helper
+gem build forticons_helper.gemspec
+gem push forticons*.gem
