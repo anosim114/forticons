@@ -1,12 +1,13 @@
 #!/usr/bin/env sh
 
-#yarn versioning
-#yarn build
+# call this script with `yarn run publish`
 
 gem signin
 cd lib/forticons_gem
+rm ./*.gem
 gem build forticons.gemspec
 gem push forticons*.gem
 cd ../forticons_helper
+rm ./*.gem
 gem build forticons_helper.gemspec
 gem push forticons*.gem

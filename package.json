@@ -1,6 +1,6 @@
 {
   "name": "forticons",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publishConfig": {
     "registry": "no registry, don't publish from this package.json."
   },
@@ -9,18 +9,19 @@
     "transform-fa": "script/transform-fa-icons.rb --input node_modules/@fortawesome/fontawesome-free/svgs/solid --output icons",
     "svgo": "svgo icons --config svgo.config.js",
     "icons-to-json": "script/build.js --input icons/**/*.svg --output lib/build/data.json",
-    "versioning": "script/version"
+    "version": "script/version",
+    "publish": "yarn run version && yarn build && bin/publish"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "6.5.1",
-    "cheerio": "1.0.0-rc.3",
-    "fs-extra": "7.0.1",
-    "globby": "11.0.0",
+    "@fortawesome/fontawesome-free": "6.7.2",
+    "cheerio": "1.0.0",
+    "fs-extra": "11.3.0",
+    "globby": "14.1.0",
     "lodash.merge": "4.6.2",
-    "svgo": "3.0.2",
-    "svgson": "5.2.1",
-    "trim-newlines": "3.0.1",
-    "yargs": "15.1.0"
+    "svgo": "3.3.2",
+    "svgson": "5.3.1",
+    "trim-newlines": "5.0.0",
+    "yargs": "17.7.2"
   },
-  "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538"
+  "packageManager": "yarn@4.9.1"
 }
